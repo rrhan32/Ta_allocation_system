@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: "Montserrat", sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 19px;
+    background-color: #f7f8fa;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.required input:after { content:"*"; }
+
+
+div.container {
+  border-radius: 5px;
+  background-color: #f7f8fa;
+  {{!-- padding: 20px; --}}
+}
+
+  #password {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+  #showPasswordLabel {
+    position: absolute
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+  
+</style>
+<head>
+    <title>Faculty Preference</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel = "stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Faculty Preference</h1>
+
+<div class="container">
+  <form action="/">
+    <label for="coursecode">Course Code</label>
+     <span class="required">*</span>
+    <input type="text" id="coursecode" name="coursecode" placeholder="Enter course code.." required>
+
+    <label for="ugpg">UG/PG</label>
+     <span class="required">*</span>
+    {{!-- <input type="text" id="ugpg" name="ugpg" placeholder="Enter course type.." required> --}}
+    <select id="ugpg" name="ugpg" required>
+      <option value="">select course type</option>
+      <option value="ug">UG</option>
+      <option value="pg">PG</option>
+    </select>
+
+
+    <label for="elective">Elective/core</label>
+     <span class="required">*</span>
+    {{!-- <input type="text" id="elective" name="elective" placeholder="Enter course type.." required> --}}
+    <select id="elective" name="elective" required>
+      <option value="">select course type</option>
+      <option value="elective">Elective</option>
+      <option value="core">Core</option>
+    </select>
+
+    <label for="needto">Need to attend lecture</label>
+     <span class="required">*</span>
+    {{!-- <input type="text" id="needto" name="needto" placeholder="0/1" required> --}}
+    <select id="needto" name="needto" required>
+      <option value="">0/1</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+
+    <label for="needto">Number of students in course</label>
+     <span class="required">*</span>
+    <input type="text" id="nof" name="nof" placeholder="eg: 30" required>
+
+    <label for="needto">Theory/Lab</label>
+     <span class="required">*</span>
+    {{!-- <input type="text" id="theorylab" name="theorylab" placeholder="Enter course type.." required> --}}
+    <select id="theorylab" name="theorylab" required>
+      <option value="">select theory or lab </option>
+      <option value="theory">Theory</option>
+      <option value="lab">Lab</option>
+    </select>
+
+    <label for="coursename" > Course Name </label>
+     <span class="requrired">*</span>
+    <input type="text" id = "coursename" name = "coursename" placeholder="Enter the course name ..." required>
+
+    <label for="instructorname" > Instructor Name </label>
+     <span class="requrired">*</span>
+    <input type="text" id = "instructorname" name = "instructorname" placeholder="Enter the Instructor name ..." required>
+
+    <label for="courseGrade">Course Grade Required</label>
+     <span class="required">*</span>
+    {{!-- <input type="text" id="courseGrade" name="courseGrade" placeholder="Enter course grade.." required> --}}
+    <select id="courseGrade" name="courseGrade" required>
+      <option value="">select the grade</option>
+      <option value="A*">A*</option>
+      <option value="A">A</option>
+      <option value="A-">A-</option>
+      {{!-- <option value="B">B</option>
+      <option value="B-">B-</option>
+      <option value="C">C</option>
+      <option value="C-">C-</option> --}}
+    </select>
+
+    <label for="prefta1">TA rollnumber1</label>
+    <input type="text" id="prefta1" name="prefta1" placeholder="Enter Rollnumber..">
+
+    <label for="prefta2">TA rollnumber2</label>
+    <input type="text" id="prefta2" name="prefta2" placeholder="Enter Rollnumber..">
+
+    <label for="prefta3">TA rollnumber3</label>
+    <input type="text" id="prefta3" name="prefta3" placeholder="Enter Rollnumber..">
+    {{!-- <input type="password" id="password" name="password" placeholder="Enter password.." required>
+     --}}
+    <div class="password-container">
+      <label for="password" style="display: none;">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter Password.." style="display: none;" value="1234">
+      <input type="checkbox" id="showPassword" style="display: none;">
+      <label for="showPassword" id="showPasswordLabel" style="display: none;">Show Password</label>
+    </div>
+
+        
+    <input type="submit" value="Submit">
+  </form>
+  
+</div>
+{{!-- {{>footer}} --}}
+<script src="/js/prof.js"></script>
+    <script src="js/loginCheck.js"></script>
+
+</body>
+</html>

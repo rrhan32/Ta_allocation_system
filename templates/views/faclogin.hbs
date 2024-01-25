@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Bootstrap Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        /* Custom styles */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .login {
+            background-color: #ffffff;
+            border: 1px solid #d3d3d3;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .oauth-container {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .oauth-container img {
+            width: 30px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .oauth-container:hover {
+            background-color: #3573c7;
+        }
+    </style>
+</head>
+<body>
+<div class="login">
+    <h1 class="title">Login</h1>
+    <button class="oauth-container" style="text-transform: none" id="authenticateBtn">
+        <img width="30" alt="Google sign-in"
+             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+        Login with Google
+    </button>
+</div>
+
+<script type="module" src="./js/faclogin.js"></script>
+</body>
+</html>

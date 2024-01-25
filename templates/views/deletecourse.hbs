@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    font-family: "Montserrat", sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 19px;
+    background-color: #f7f8fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  input[type=text],
+  select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    display: none; /* Hide the submit button */
+  }
+
+  div.container {
+    border-radius: 5px;
+    background-color: #f7f8fa;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+</style>
+
+<head>
+  <title>Delete courses</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <h1>Drop course</h1>
+  <div class="container">
+    <form action="/deletecourse" method="POST" id="deleteForm">
+      <label for="id">Course Code</label>
+      <span class="required">*</span>
+      <input type="text" id="id" name="id" placeholder="Enter course code.." required>
+      <input type="hidden" name="password" value="1234"> <!-- Fixed password -->
+    </form>
+    {{#if error}}
+    <p class="error-message">{{error}}</p>
+    {{/if}}
+  </div>
+
+  <script>
+    // Add event listener to the input field to submit the form on Enter key press
+    document.getElementById("id").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default Enter behavior (e.g., new line)
+        document.getElementById("deleteForm").submit(); // Submit the form
+      }
+    });
+  </script>
+</body>
+</html>

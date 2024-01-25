@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: "Montserrat", sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 19px;
+    background-color: #f7f8fa;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f7f8fa;
+  {{!-- padding: 20px; --}}
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+  .password-container {
+    position: relative;
+  }
+
+
+  .submit-button {
+    margin-top: 100px;
+  }
+
+  #password {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+  #showPasswordLabel {
+    position: absolute
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+
+  }  .password-container {
+    position: relative;
+  }
+
+
+  .submit-button {
+    margin-top: 100px;
+  }
+
+  #password {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+  #showPasswordLabel {
+    position: absolute
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+
+  }
+
+  .forgot-password-container{
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .forgot-password{
+    color: #007bff;
+    font-size: 16px;
+  }
+
+</style>
+
+<script>
+function togglePasswordVisibility() {
+  var passwordInput = document.getElementById("password");
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
+}
+</script>
+
+<head>
+    <title>Delete TA</title>
+     <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel = "stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>Drop TA</h1>
+
+<div class="container">
+  <form action="/deleteta" method="post">
+    <label for="fname">TA Roll Number</label>
+    <span class="required">*</span>
+    <input type="text" id="id" name="id" placeholder="Enter roll number.." required>
+
+    <label for="fname">Password</label>
+    <span class="required">*</span>
+    <div class = "password-input">
+      <input type="password" id="password" name="password" placeholder="Enter password.." required>
+      <input type="checkbox" onclick="togglePasswordVisibility()">
+      <label for="show-password" id = "showPasswordLabel">Show Password</label>
+    </div>
+    {{!-- <input type="text" id="password" name="password" placeholder="Enter password.." required> --}}
+    <span class="submit-button">
+      <input type="submit" value="Submit">
+    </span>
+  </form>
+  {{#if error}}
+  <p class="error-message">{{error}}</p>
+  {{/if}}
+
+</div>
+{{!-- {{>footer}} --}}
+  {{!-- <script src="/js/deleteta.js"></script> --}}
+
+</body>
+</html>

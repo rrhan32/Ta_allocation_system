@@ -1,0 +1,43 @@
+{
+  "name": "ta_allocation",
+  "version": "1.0.0",
+  "description": "```bash git clone https://github.com/sudojarvis/TA_allocation.git ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "NODE": "env-cmd -f ./config/dev.env node src/index.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "concurrently": "^7.2.2",
+    "cors": "^2.8.5",
+    "exceljs": "^4.3.0",
+    "express": "^4.18.2",
+    "firebase-tools": "^12.8.0",
+    "hbs": "^4.2.0",
+    "install": "^0.13.0",
+    "jsdom": "^21.1.1",
+    "mongodb": "^4.17.1",
+    "mongoose": "^6.6.5",
+    "npm": "^9.6.7",
+    "react": "^18.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarshitaKalani/TA_allocation.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/HarshitaKalani/TA_allocation/issues"
+  },
+  "homepage": "https://github.com/HarshitaKalani/TA_allocation#readme"
+}

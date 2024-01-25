@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+    font-family: "Montserrat", sans-serif;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 0 19px;
+    background-color: #f7f8fa;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f7f8fa;
+  {{!-- padding: 20px; --}}
+}
+
+#password {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+#showPasswordLabel {
+  position: absolute
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+
+#cgpaError {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+#cgpa-container {
+  margin-top: 10px;
+  display: block;
+}
+#checkBoxUg {
+  margin-top: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+</style>
+<head>
+    <title>TA Preference</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel = "stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<h1>TA Preferences</h1>
+
+<div class="container">
+  <form action="/">
+    <label for="rollNumber">TA Roll Number</label>
+    <span class="required">*</span>
+    <input type="text" id="rollNumber" name="rollNumber" placeholder="Enter your rollnumber.." required>
+
+    <div id="checkBoxUg">
+    <label for="isUgStudent">Are you an Undergraduate (UG) student?</label>
+    <input type="checkbox" id="isUgStudent" name="isUgStudent">
+    </div>
+    {{!-- < id="ugFields" style="display: none;"> --}}
+    <div id="cgpa-container" style="display: none;">
+      <label for="cgpa" >CGPA</label>
+      <span class="required" id ="cgpa-required">*</span>
+      <input type="text" id="cgpa" name="cgpa" placeholder="Enter your cgpa..">
+      {{!-- <span id="cgpaError" style="color: red; display: none;"></span> --}}
+      <span id="cgpaError" style="color: red; display"></span>
+    </div>
+      <label for="pref1">Preference 1</label>
+      <span class="required">*</span>
+      <input type="text" id="pref1" name="pref1" placeholder="Enter course code.." required>
+
+
+
+    <div id="course_grade_pref_1_container" style="display: none;">  
+
+      <label for="course_grade_pref_1">Course Grade for Preference 1</label>
+      <span class="required">*</span>
+      {{!-- <input type="text" id="course_grade_pref_1" name="course_grade_pref_1" placeholder="Enter your course grade.." required> --}}
+      <select id="course_grade_pref_1" name="course_grade_pref_1">
+        <option value="">Select course grade</option>
+        <option value="A*">A*</option>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        {{!-- <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option> --}}
+      </select>
+    </div>
+
+
+      <label for="pref2">Preference 2</label>
+      <span class="required">*</span>
+      <input type="text" id="pref2" name="pref2" placeholder="Enter course code.." required>
+    
+    <div id="course_grade_pref_2_container" style="display: none;">
+      <label for="course_grade_pref_2">Course Grade for Preference 2</label>  
+      <span class="required">*</span>
+      {{!-- <input type="text" id="course_grade_pref_2" name="course_grade_pref_2" placeholder="Enter your course grade.." required> --}}
+      <select id="course_grade_pref_2" name="course_grade_pref_2">
+        <option value="">Select course grade</option>
+        <option value="A*">A*</option>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        {{!-- <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option> --}}
+      </select>
+    </div>
+
+      <label for="pref3">Preference 3</label>
+      <span class="required">*</span>
+      <input type="text" id="pref3" name="pref3" placeholder="Enter course code.." required>
+
+
+    <div id="course_grade_pref_3_container" style="display: none;">
+      <label for="course_grade_pref_3">Course Grade for Preference 3</label>
+      <span class="required">*</span>
+      {{!-- <input type="text" id="course_grade_pref_3" name="course_grade_pref_3" placeholder="Enter your course grade.." required> --}}
+      <select id="course_grade_pref_3" name="course_grade_pref_3">
+        <option value="">Select course grade</option>
+        <option value="A*">A*</option>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        {{!-- <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option> --}}
+      </select>
+    </div>
+
+  {{!-- <div id = "pgFields" style="display: block;"> --}}
+
+    {{!-- <label for="pref1">Preference 1</label>
+    <span class="required">*</span>
+    <input type="text" id="pref1" name="pref1" placeholder="Enter course code.." required>
+
+
+    <label for="pref2">Preference 2</label>
+    <span class="required">*</span>
+    <input type="text" id="pref2" name="pref2" placeholder="Enter course code.." required>
+
+
+    <label for="pref3">Preference 3</label>
+    <span class="required">*</span>
+    <input type="text" id="pref3" name="pref3" placeholder="Enter course code.." required> --}}
+  {{!-- </div> --}}
+
+    <div class = "password-container">
+      <label for = "password">Password</label>
+      <span class="required">*</span>
+      <input type="password" id="password" name="password" placeholder="Enter Password.." required>
+      <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+      <label for="showPassword" id="showPasswordLabel">Show Password</label>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+  {{!-- <p><b>Note</b>: If you are an expert in any of the Preference, fill the checkbox</p> --}}
+</div>
+
+<script src="/js/ta.js"></script>
+</body>
+</html>
